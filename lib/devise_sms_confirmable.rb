@@ -11,7 +11,7 @@ module Devise
   @@sms_confirm_within = 2.days
 
   mattr_accessor :sms_confirmation_keys
-  @@sms_confirmation_keys = [:phone_number]
+  @@sms_confirmation_keys = [:phone]
 
   mattr_accessor :parent_texter
   @@parent_texter = "Textris::Base"

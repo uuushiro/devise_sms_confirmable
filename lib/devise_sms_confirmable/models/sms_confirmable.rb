@@ -20,7 +20,7 @@ module Devise
       def sms_confirm(args={})
         pending_any_sms_confirmation do
           if sms_confirmation_period_expired?
-            self.errors.add(:phone_number, :sms_confirmation_period_expired,
+            self.errors.add(:phone, :sms_confirmation_period_expired,
                             period: Devise::TimeInflector.time_ago_in_words(self.class.confirm_within.ago))
             return false
           end
@@ -29,7 +29,7 @@ module Devise
 
           saved = if pending_sms_reconfirmation?
                     skip_reconfirmation!
-                    self.phone_number = unconfirmed_phone_number
+                    self.phone = unconfirmed_phone_number
                     self.unconfirmed_phone_number = nil
 
                     # We need to validate in such cases to enforce e-mail uniqueness
@@ -126,7 +126,7 @@ module Devise
         if (!sms_confirmed? || pending_sms_reconfirmation?)
           yield
         else
-          self.errors.add(:phone_number, :already_confirmed)
+          self.errors.add(:phone, :already_confirmed)
           false
         end
       end
@@ -135,24 +135,24 @@ module Devise
         postpone = self.class.reconfirmable &&
             will_save_change_to_phone_number? &&
             !@bypass_confirmation_postpone &&
-            self.phone_number.present? &&
+            self.phone.present? &&
             (!@skip_reconfirmation_in_callback || !self.phone_number_in_database.nil?)
         @bypass_confirmation_postpone = false
         postpone
       end
 
       def send_sms_confirmation_notification?
-        sms_confirmation_required? && !@skip_confirmation_notification && self.phone_number.present?
+        sms_confirmation_required? && !@skip_confirmation_notification && self.phone.present?
       end
 
       def sms_reconfirmation_required?
-        self.class.reconfirmable && @reconfirmation_required && (self.phone_number.present? || self.unconfirmed_phone_number.present?)
+        self.class.reconfirmable && @reconfirmation_required && (self.phone.present? || self.unconfirmed_phone_number.present?)
       end
 
       def postpone_phone_number_change_until_confirmation_and_regenerate_confirmation_token
         @reconfirmation_required = true
-        self.unconfirmed_phone_number = self.phone_number
-        self.phone_number = self.phone_number_in_database
+        self.unconfirmed_phone_number = self.phone
+        self.phone = self.phone_number_in_database
         self.confirmation_token = nil
         generate_sms_confirmation_token
       end
@@ -185,9 +185,9 @@ module Devise
 
       def find_by_unconfirmed_phone_number_with_errors(attributes = {})
         attributes = attributes.slice(*sms_confirmation_keys).permit!.to_h if attributes.respond_to? :permit
-        unconfirmed_required_attributes = sms_confirmation_keys.map { |k| k == :phone_number ? :unconfirmed_phone_number : k }
+        unconfirmed_required_attributes = sms_confirmation_keys.map { |k| k == :phone ? :unconfirmed_phone_number : k }
         unconfirmed_attributes = attributes.symbolize_keys
-        unconfirmed_attributes[:unconfirmed_phone_number] = unconfirmed_attributes.delete(:phone_number)
+        unconfirmed_attributes[:unconfirmed_phone_number] = unconfirmed_attributes.delete(:phone)
         find_or_initialize_with_errors(unconfirmed_required_attributes, unconfirmed_attributes, :not_found)
       end
 

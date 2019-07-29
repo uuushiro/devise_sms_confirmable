@@ -8,35 +8,35 @@ if defined?(Textris)
       @token = token
       @resource = record
 
-      text to: record.phone_number
+      text to: record.phone
     end
 
     def reset_password_instructions(record, token, opts={})
       @token = token
       @resource = record
 
-      text to: record.phone_number
+      text to: record.phone
     end
 
     def unlock_instructions(record, token, opts={})
       @token = token
       @resource = record
 
-      text to: record.phone_number
+      text to: record.phone
     end
 
     def email_changed(record, token, opts={})
       @token = token
       @resource = record
 
-      text to: record.phone_number
+      text to: record.phone
     end
 
     def password_change(record, token, opts={})
       @token = token
       @resource = record
 
-      text to: record.phone_number
+      text to: record.phone
     end
   end
 end
