@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    devise_sms_confirmable (0.1.0)
+    devise_sms_confirmable (0.1.1)
       devise (>= 4.6.2)
       railties (>= 5.1.0)
       textris (~> 0.7)
