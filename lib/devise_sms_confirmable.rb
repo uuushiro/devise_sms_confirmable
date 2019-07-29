@@ -4,7 +4,6 @@ require "devise_sms_confirmable/version"
 require "devise_sms_confirmable/rails/routes"
 require 'devise_sms_confirmable/models/sms_confirmable'
 require 'devise_sms_confirmable/engine'
-require_relative '../app/texters/devise/texter'
 
 module Devise
   mattr_accessor :sms_confirm_within
@@ -35,3 +34,5 @@ end
 
 routes = [nil, :new]
 Devise.add_module :sms_confirmable, controller: :sms_confirmations, route: { sms_confirmation: routes }
+
+require_relative '../app/texters/devise/texter'

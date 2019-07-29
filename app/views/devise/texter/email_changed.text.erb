@@ -1,7 +1,7 @@
 Hello <%= @phone %>!
 
-<% if @resource.try(:unconfirmed_phone_number?) %>
-  We're contacting you to notify you that your phone number is being changed to <%= @resource.unconfirmed_phone_number %>.
+<% if @resource.try(:unconfirmed_phone?) %>
+  We're contacting you to notify you that your phone number is being changed to <%= @resource.unconfirmed_phone %>.
 <% else %>
   We're contacting you to notify you that your phone has been changed to <%= @resource.phone %>.
 <% end %>
