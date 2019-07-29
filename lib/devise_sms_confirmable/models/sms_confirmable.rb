@@ -8,7 +8,7 @@ module Devise
         after_create :skip_reconfirmation_in_callback!, if: :send_sms_confirmation_notification?
         after_commit :send_on_create_sms_confirmation_instructions, on: :create, if: :send_sms_confirmation_notification?
         after_commit :send_sms_reconfirmation_instructions, on: :update, if: :sms_reconfirmation_required?
-        before_update :postpone_phone_change_until_confirmation_and_regenerate_confirmation_token, if: :postpone_phone_number_change?
+        before_update :postpone_phone_change_until_confirmation_and_regenerate_confirmation_token, if: :postpone_phone_change?
       end
 
       def self.required_fields(klass)
