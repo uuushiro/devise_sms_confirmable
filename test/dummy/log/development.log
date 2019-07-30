@@ -1,0 +1,325 @@
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+SmsConfirmableTest: test_should_call_after_confirmation_if_confirmed
+--------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+SmsConfirmableTest: test_should_show_error_when_a_token_has_already_been_used
+-----------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_be_active_without_confirmation
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+SmsConfirmableTest: test_should_require_all_confirmation_keys
+-------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------
+SmsConfirmableTest: test_should_find_a_user_to_send_confirmation_instructions
+-----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+SmsConfirmableTest: test_should_be_active_when_already_confirmed
+----------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_break_when_a_user_tries_to_reset_their_password_in_the_case_where_confirmation_is_not_required_and_confirm_within_is_set
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_accept_confirmation_email_token_after_2_days_when_expiration_is_set_to_3_days
+-------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_be_active_without_confirmation_when_confirmation_is_not_required
+------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_never_generate_the_same_confirmation_token_for_different_users
+----------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_add_error_to_new_user_email_if_no_email_was_found
+---------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_return_a_new_record_with_errors_when_a_invalid_token_is_given
+---------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_be_active_when_we_set_allow_unconfirmed_access_for_to_nil
+-----------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_always_perform_validations_upon_confirm_when_ensure_valid_true
+----------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+SmsConfirmableTest: test_do_not_generate_a_new_token_on_resend
+--------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------
+SmsConfirmableTest: test_should_confirm_a_user_by_updating_confirmed_at
+-----------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_send_confirmation_when_no_email_is_provided
+-------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_accept_confirmation_email_token_after_4_days_when_expiration_is_set_to_3_days
+-----------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_be_active_when_confirm_in_is_zero
+---------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_find_and_confirm_a_user_automatically_based_on_the_raw_token
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_confirm_a_user_already_confirmed
+--------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+SmsConfirmableTest: test_generate_a_new_token_after_first_has_expired
+---------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_be_active_when_confirmation_sent_at_is_not_overpast
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_generate_confirmation_token_after_creating_a_record
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_return_a_new_record_with_errors_when_a_blank_token_is_given
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+SmsConfirmableTest: test_should_set_callbacks_to_send_the_mail
+--------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_generate_a_new_token_neither_send_e-mail_if_skip_confirmation!_is_invoked
+-------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_call_after_confirmation_if_not_confirmed
+----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_resend_email_instructions_if_the_user_change_their_email
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_send_email_instructions_for_the_user_confirm_its_email
+--------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_always_have_confirmation_token_when_email_is_sent
+---------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------
+SmsConfirmableTest: test_should_send_confirmation_instructions_by_email
+-----------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------
+SmsConfirmableTest: test_should_return_a_new_user_if_no_email_was_found
+-----------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_skip_confirmation_e-mail_without_confirming_if_skip_confirmation_notification!_is_invoked
+-------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_accept_confirmation_email_token_even_after_5_years_when_no_expiration_is_set
+------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_find_a_user_to_send_email_instructions_for_the_user_confirm_its_email_by_authentication_keys
+----------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_generate_errors_for_a_user_email_if_user_is_already_confirmed
+---------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_send_confirmation_when_trying_to_save_an_invalid_user
+-----------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+SmsConfirmableTest: test_should_verify_whether_a_user_is_confirmed_or_not
+-------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_reset_confirmation_status_or_token_when_updating_email
+------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_be_active_when_confirm_period_is_set_to_0_days
+----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_should_not_be_able_to_send_instructions_if_the_user_is_already_confirmed
+-------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------------
+SmsConfirmableTest: test_confirm_time_should_fallback_to_devise_confirm_in_default_configuration
+------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+ReconfirmableTest: test_required_fields_should_contain_the_fields_that_Devise_uses
+----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_allow_admin_to_get_past_confirmation_email_by_resubmitting_their_new_address
+---------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------
+ReconfirmableTest: test_should_generate_confirmation_token_after_changing_email
+-------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------
+ReconfirmableTest: test_should_update_email_only_when_it_is_confirmed
+---------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_worry_about_validations_on_confirm_even_with_reconfirmable
+---------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_skip_sending_reconfirmation_email_when_email_is_changed_and_skip_confirmation_notification!_is_invoked
+-------------------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_notify_previous_email_on_email_change_when_configured
+------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_send_confirmation_instructions_by_email_after_changing_email_from_nil
+----------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_require_reconfirmation_after_creating_a_record_and_updating_the_email
+----------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_send_confirmation_instructions_by_email_after_changing_email
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_add_error_to_new_admin_email_if_no_email_or_unconfirmed_email_was_found
+------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_send_confirmation_by_email_after_changing_password
+-------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_regenerate_confirmation_token_or_require_reconfirmation_if_skipping_reconfirmation_after_changing_email
+------------------------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_required_fields_should_also_contain_unconfirmable_when_reconfirmable_email_is_true
+----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+ReconfirmableTest: test_should_find_admin_with_email_in_unconfirmed_emails
+--------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------
+ReconfirmableTest: test_should_regenerate_confirmation_token_after_changing_email
+---------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_return_a_new_admin_if_no_email_or_unconfirmed_email_was_found
+--------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_require_reconfirmation_after_creating_a_record_with_#save_called_in_callback
+---------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_find_a_admin_by_send_confirmation_instructions_with_unconfirmed_email
+----------------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_require_reconfirmation_after_creating_a_record
+---------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------
+ReconfirmableTest: test_should_stay_confirmed_when_email_is_changed
+-------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------------------------
+ReconfirmableTest: test_should_not_send_confirmation_by_email_after_changing_to_a_blank_email
+---------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
