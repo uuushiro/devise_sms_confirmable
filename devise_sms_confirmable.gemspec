@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "devise_sms_confirmable/version"
@@ -24,10 +23,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "devise", ">= 4.6.2"
-  spec.add_dependency("railties", ">= 5.1.0")
+  spec.add_dependency "rails", "~> 5.1.4"
   spec.add_dependency("textris", "~> 0.7")
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "sqlite3"
 end
