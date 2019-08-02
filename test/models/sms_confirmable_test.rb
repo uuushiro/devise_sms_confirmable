@@ -542,7 +542,7 @@ class ReconfirmableTest < ActiveSupport::TestCase
       assert_difference 'Textris::Base.deliveries.size', 2 do
         assert admin.update(phone: '+819076543211')
       end
-      
+
       assert_equal original_phone, Textris::Base.deliveries[1].to.first.insert(0, '+')
 
       assert_equal '+819076543211', Textris::Base.deliveries[2].to.first.insert(0, '+')
