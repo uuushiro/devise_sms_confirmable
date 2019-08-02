@@ -29,4 +29,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "devise", ">= 4.6.2"
+  spec.add_development_dependency "twilio-ruby"
+  spec.add_development_dependency "mocha"
+  spec.add_development_dependency "timecop"
 end

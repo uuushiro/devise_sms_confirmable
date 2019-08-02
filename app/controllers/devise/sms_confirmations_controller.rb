@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Devise::SmsConfirmationsController < DeviseController
+
   # GET /resource/sms_confirmation/new
   def new
     self.resource = resource_class.new

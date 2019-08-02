@@ -2,7 +2,7 @@
 
 module Devise
   module Models
-    module SMSAuthenticatable
+    module SmsAuthenticatable
       extend ActiveSupport::Concern
 
       protected
@@ -13,7 +13,7 @@ module Devise
 
       def send_sms_devise_notification(notification, *args)
         message = devise_texter.send(notification, self, *args)
-        message.deliver_now
+        message.deliver
       end
     end
   end
