@@ -38,6 +38,15 @@ devise :database_authenticatable, :sms_confirmable
 
 ``` 
 
+### Add columns to model
+```ruby
+t.string   :phone,              null: false, default: ""
+t.string   :sms_confirmation_token
+t.datetime :sms_confirmed_at
+t.datetime :sms_confirmation_sent_at
+# t.string   :unconfirmed_phone # Only if using reconfirmable
+```
+
 ### Allow models to sign in using their phone number
 
 ```ruby
