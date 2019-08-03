@@ -5,11 +5,11 @@ require "devise_sms_confirmable/version"
 Gem::Specification.new do |spec|
   spec.name          = "devise_sms_confirmable"
   spec.version       = DeviseSmsConfirmable::VERSION
-  spec.authors       = ["matsutani"]
+  spec.authors       = ["uuushiro"]
   spec.email         = ["yushiro.ma2ta2.21@gmail.com"]
 
-  spec.summary       = %q{Module provide sms confirmation.}
-  spec.description   = %q{Module provide sms confirmation.}
+  spec.summary       = %q{Module provide sms confirmation.You can handle SMS Message template  as Devise handles ActionMailer template.}
+  spec.description   = %q{Module provide sms confirmation.You can handle SMS Message template  as Devise handles ActionMailer template.}
   spec.homepage      = "https://github.com/uuushiro/devise_sms_confirmable"
   spec.license       = "MIT"
 
