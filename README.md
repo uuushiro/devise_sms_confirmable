@@ -50,7 +50,7 @@ t.datetime :sms_confirmation_sent_at
 ### Allow models to sign in using their phone number
 
 ```ruby
-  config.authentication_keys = [:phone]
+config.authentication_keys = [:phone]
 ```
 
 ## Configuring twilio-ruby 
