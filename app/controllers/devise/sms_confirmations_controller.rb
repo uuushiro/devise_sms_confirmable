@@ -19,9 +19,9 @@ class Devise::SmsConfirmationsController < DeviseController
     end
   end
 
-  # GET /resource/sms_confirmation?confirmation_token=abcdef
+  # GET /resource/sms_confirmation?sms_confirmation_token=abcdef
   def show
-    self.resource = resource_class.sms_confirm_by_token(params[:confirmation_token])
+    self.resource = resource_class.sms_confirm_by_token(params[:sms_confirmation_token])
     yield resource if block_given?
 
     if resource.errors.empty?
