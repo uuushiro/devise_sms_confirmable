@@ -2,7 +2,7 @@
 
 if defined?(Textris)
   class Devise::Texter < Textris::Base
-    
+
     def confirmation_instructions(record, token, opts={})
       @token = token
       @resource = record
