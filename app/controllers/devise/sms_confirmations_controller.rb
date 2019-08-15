@@ -19,16 +19,24 @@ class Devise::SmsConfirmationsController < DeviseController
     end
   end
 
-  # GET /resource/sms_confirmation?sms_confirmation_token=abcdef
-  def show
-    self.resource = resource_class.sms_confirm_by_token(params[:sms_confirmation_token])
+  # GET /resource/sms_confirmation/edit?phone=abcdef
+  def edit
+    self.resource = resource_class.find_by_phone(confirmation_params[:phone])
+
+    if resource.blank?
+      redirect_to sms_confirmation_path and return
+    end
+  end
+
+  def update
+    self.resource = resource_class.sms_confirm_by_token(confirmation_params[:sms_confirmation_token])
     yield resource if block_given?
 
     if resource.errors.empty?
-      set_flash_message!(:notice, :confirmed)
+      set_flash_message!(:notice, :sms_confirmed)
       respond_with_navigational(resource){ redirect_to after_confirmation_path_for(resource_name, resource) }
     else
-      respond_with_navigational(resource.errors, status: :unprocessable_entity){ render :new }
+      respond_with_navigational(resource.errors, status: :unprocessable_entity){ render :show }
     end
   end
 
@@ -36,7 +44,7 @@ class Devise::SmsConfirmationsController < DeviseController
 
   # The path used after resending confirmation instructions.
   def after_resending_confirmation_instructions_path_for(resource_name)
-    is_navigational_format? ? new_session_path(resource_name) : '/'
+    is_navigational_format? ? sms_confirmation_path(resource_name) : '/'
   end
 
   # The path used after confirmation.

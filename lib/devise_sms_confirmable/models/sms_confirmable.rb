@@ -125,10 +125,6 @@ module Devise
         @skip_sms_reconfirmation_in_callback = true
       end
 
-      def devise_texter
-        Devise.texter
-      end
-
       def sms_confirmation_period_valid?
         return true if self.class.allow_sms_unconfirmed_access_for.nil?
         return false if self.class.allow_sms_unconfirmed_access_for == 0.days
