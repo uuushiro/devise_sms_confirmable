@@ -35,6 +35,9 @@ module Devise
   mattr_accessor :allow_sms_unconfirmed_access_for
   @@allow_sms_unconfirmed_access_for = 0.days
 
+  mattr_accessor :sms_reset_password_within
+  @@sms_reset_password_within = 10.minutes
+
   # Get the sms sender class from the texter reference object.
   def self.texter
     @@texter_ref.get

@@ -244,7 +244,7 @@ module Devise
           find_or_initialize_with_errors(unconfirmed_required_attributes, unconfirmed_attributes, :not_found)
         end
 
-        Devise::Models.config(self, :allow_sms_unconfirmed_access_for, :send_phone_changed_notification, :sms_confirmation_keys, :sms_reconfirmable, :sms_confirm_within)
+        Devise::Models.config(self, :allow_sms_unconfirmed_access_for, :send_phone_changed_notification, :sms_confirmation_keys, :sms_reconfirmable, :sms_confirm_within, :sms_reset_password_within)
       end
     end
   end
