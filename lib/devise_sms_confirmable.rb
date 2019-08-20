@@ -49,6 +49,13 @@ module Devise
   end
 
   self.texter = "Devise::Texter"
+
+  # Generate a friendly number randomly to be used as SMS code.
+  # By default, length is 6 characters.
+  def self.friendly_sms_code(length = 6)
+    raise ArgumentError, "sms code must be in 4 ~ 8" unless length.between?(4, 8)
+    (0..9).to_a.sample(length).join
+  end
 end
 
 routes = [nil, :new]
