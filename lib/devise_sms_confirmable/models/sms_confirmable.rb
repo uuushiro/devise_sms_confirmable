@@ -221,7 +221,7 @@ module Devise
           confirmable
         end
 
-        def sms_confirm_by_token(sms_confirmation_token)
+        def sms_confirm_by_token(sms_confirmation_token, context: nil)
           confirmable = find_first_by_auth_conditions(sms_confirmation_token: sms_confirmation_token)
           unless confirmable
             confirmation_digest = Devise.token_generator.digest(self, :sms_confirmation_token, sms_confirmation_token)
@@ -232,7 +232,7 @@ module Devise
           # confirmable = find_or_initialize_with_error_by(:sms_confirmation_token, sms_confirmation_token)
           # after enough time has passed that Devise clients do not use digested tokens
 
-          confirmable.sms_confirm if confirmable.persisted?
+          confirmable.sms_confirm(context: context) if confirmable.persisted?
           confirmable
         end
 
