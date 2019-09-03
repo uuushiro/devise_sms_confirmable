@@ -47,9 +47,9 @@ module Devise
                     self.phone = unconfirmed_phone
                     self.unconfirmed_phone = nil
 
-                    save(validate: true)
+                    save(validate: true, context: args[:context])
                   else
-                    save(validate: args[:ensure_valid] == true)
+                    save(validate: args[:ensure_valid] == true, context: args[:context])
                   end
 
           after_sms_confirmation if saved
