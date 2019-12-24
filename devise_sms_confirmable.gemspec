@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "devise", ">= 4.6.2"
-  spec.add_dependency "rails", "~> 5.1.4"
+  spec.add_dependency "rails", ">= 5.1.4"
   spec.add_dependency("textris", "~> 0.7")
 
   spec.add_development_dependency "bundler"
