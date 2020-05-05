@@ -225,7 +225,7 @@ module Devise
           confirmable = find_first_by_auth_conditions(phone: phone, sms_confirmation_token: sms_confirmation_token)
           unless confirmable
             confirmation_digest = Devise.token_generator.digest(self, :sms_confirmation_token, sms_confirmation_token)
-            confirmable = find_or_initialize_with_errors([:phone, :sms_confirmation_token], { phone: phone, sms_confirmation_token: confirmation_digest }, error)
+            confirmable = find_or_initialize_with_errors([:phone, :sms_confirmation_token], { phone: phone, sms_confirmation_token: confirmation_digest }, :invalid)
           end
 
           # TODO: replace above lines with
