@@ -29,7 +29,7 @@ class Devise::SmsConfirmationsController < DeviseController
   end
 
   def update
-    self.resource = resource_class.sms_confirm_by_token(confirmation_params[:sms_confirmation_token])
+    self.resource = resource_class.sms_confirm_by_token(confirmation_params[:phone], confirmation_params[:sms_confirmation_token])
     yield resource if block_given?
 
     if resource.errors.empty?
@@ -58,5 +58,9 @@ class Devise::SmsConfirmationsController < DeviseController
 
   def translation_scope
     'devise.sms_confirmations'
+  end
+
+  def confirmation_params
+    params.require(resource_name).permit(:phone, :sms_confirmation_token)
   end
 end
