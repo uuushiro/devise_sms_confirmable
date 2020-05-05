@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'test_helper'
+require_relative '../test_helper'
 
 class SmsConfirmableTest < ActiveSupport::TestCase
 
@@ -50,19 +50,19 @@ class SmsConfirmableTest < ActiveSupport::TestCase
   test 'should find and confirm a user automatically based on the raw token' do
     user = create_user
     raw  = user.raw_sms_confirmation_token
-    confirmed_user = User.sms_confirm_by_token(raw)
+    confirmed_user = User.sms_confirm_by_token(user.phone, raw)
     assert_equal confirmed_user, user
     assert user.reload.sms_confirmed?
   end
 
   test 'should return a new record with errors when a invalid token is given' do
-    confirmed_user = User.sms_confirm_by_token('invalid_confirmation_token')
+    confirmed_user = User.sms_confirm_by_token('09012345678', 'invalid_confirmation_token')
     refute confirmed_user.persisted?
     assert_equal "is invalid", confirmed_user.errors[:sms_confirmation_token].join
   end
 
   test 'should return a new record with errors when a blank token is given' do
-    confirmed_user = User.sms_confirm_by_token('')
+    confirmed_user = User.sms_confirm_by_token('09012345678', '')
     refute confirmed_user.persisted?
     assert_equal "can't be blank", confirmed_user.errors[:sms_confirmation_token].join
   end
@@ -71,7 +71,7 @@ class SmsConfirmableTest < ActiveSupport::TestCase
     user = create_user
     user.sms_confirmed_at = Time.now
     user.save
-    confirmed_user = User.sms_confirm_by_token(user.raw_sms_confirmation_token)
+    confirmed_user = User.sms_confirm_by_token(user.phone, user.raw_sms_confirmation_token)
     assert confirmed_user.sms_confirmed?
     assert_equal "was already confirmed, please try signing in", confirmed_user.errors[:phone].join
   end
@@ -79,10 +79,10 @@ class SmsConfirmableTest < ActiveSupport::TestCase
   test 'should show error when a token has already been used' do
     user = create_user
     raw  = user.raw_sms_confirmation_token
-    User.sms_confirm_by_token(raw)
+    User.sms_confirm_by_token(user.phone, raw)
     assert user.reload.sms_confirmed?
 
-    confirmed_user = User.sms_confirm_by_token(raw)
+    confirmed_user = User.sms_confirm_by_token(user.phone, raw)
     assert_equal "was already confirmed, please try signing in", confirmed_user.errors[:phone].join
   end
 
@@ -293,7 +293,7 @@ class SmsConfirmableTest < ActiveSupport::TestCase
   def sms_confirm_user_by_token_with_sms_confirmation_sent_at(sms_confirmation_sent_at)
     user = create_user
     user.update_attribute(:sms_confirmation_sent_at, sms_confirmation_sent_at)
-    confirmed_user = User.sms_confirm_by_token(user.raw_sms_confirmation_token)
+    confirmed_user = User.sms_confirm_by_token(user.phone, user.raw_sms_confirmation_token)
     assert_equal confirmed_user, user
     user.reload.sms_confirmed?
   end
